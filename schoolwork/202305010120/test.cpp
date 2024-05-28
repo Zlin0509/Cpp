@@ -34,6 +34,7 @@ struct Save
 // 消防设施的具体信息
 struct Fire
 {
+    int fi_number;  // 消防设施的编号
     int fi_type;    // 消防设施的种类
     int fi_size;    // 消防设施的数量
     int fi_x, fi_y; // 消防设施的位置
@@ -232,6 +233,13 @@ void read_from_data()
         Fire xx;
         while (fread(&xx, 1, sizeof(struct Fire), p))
         {
+            Fi[xx.fi_number].fi_number = xx.fi_number;
+            Fi[xx.fi_number].fi_size = xx.fi_size;
+            Fi[xx.fi_number].fi_state = xx.fi_state;
+            Fi[xx.fi_number].fi_type = xx.fi_type;
+            Fi[xx.fi_number].fi_x = xx.fi_x;
+            Fi[xx.fi_number].fi_y = xx.fi_y;
+            fi_number.insert(xx.fi_number);
         }
         cout << "消防设施信息读取成功" << '\n';
         fclose(p);
@@ -284,6 +292,8 @@ void Save_data()
     fwrite(&all_fin, 1, sizeof(struct Fin), p);
     fclose(p);
 
+    cout << "------------------------" << '\n';
+    Sleep(300);
     cout << "保存更改完毕，可以关闭窗口" << '\n';
 }
 
@@ -511,16 +521,12 @@ inline void user1()
 
         Sleep(300);
         cout << "操作完成,请继续选择你的操作" << '\n';
-        if (Type != 5)
-        {
-            cout << '\n';
-            cout << "请选择你想进行的操作：" << '\n';
-            cout << "1:增加新用户" << '\n';
-            cout << "2:删除用户" << '\n';
-            cout << "3:修改用户权限" << '\n';
-            cout << "4:查询用户" << '\n';
-            cout << "5:退出系统" << '\n';
-        }
+        cout << "请选择你想进行的操作：" << '\n';
+        cout << "1:增加新用户" << '\n';
+        cout << "2:删除用户" << '\n';
+        cout << "3:修改用户权限" << '\n';
+        cout << "4:查询用户" << '\n';
+        cout << "5:退出系统" << '\n';
         cin >> Type;
     }
     cout << "退出成功" << '\n';
@@ -710,7 +716,14 @@ inline void change_At()
                 cout << "请输入更改后的维护方式:" << '\n';
                 cin >> At[number].save;
             }
-            cout << "操作完成，请选择你的下一步操作" << '\n';
+
+            Sleep(100);
+            cout << "操作完成，请选择你的下一步要修改的内容" << '\n';
+            cout << "1:景观名称" << '\n';
+            cout << "2:景观种类" << '\n';
+            cout << "3:景观位置" << '\n';
+            cout << "4:景观维护方式" << '\n';
+            cout << "5:退出该系统" << '\n';
             cin >> ch;
         }
         cout << "退出景观修改系统成功" << '\n';
@@ -799,6 +812,7 @@ inline void add_Fi()
     }
     else
     {
+        Fi[number].fi_number = number;
         cout << "请输入消防设施种类:\n";
         cout << "1:消火栓 2:水桶 3:消防车" << '\n';
         cin >> Fi[number].fi_type;
@@ -862,7 +876,14 @@ inline void change_Fi()
                 cout << "1:完好 2:轻微损坏 3:严重损坏" << '\n';
                 cin >> Fi[number].fi_state;
             }
+
+            Sleep(100);
             cout << "操作完成，请选择你的下一步操作" << '\n';
+            cout << "1:修改消防设施的种类" << '\n';
+            cout << "2:修改消防设施的数量" << '\n';
+            cout << "3:修改消防设施的位置" << '\n';
+            cout << "4:修改消防设施的状态" << '\n';
+            cout << "5:退出该系统" << '\n';
             cin >> ch;
         }
         cout << "退出消防设施修改系统成功" << '\n';
@@ -918,7 +939,12 @@ inline void user3_Fi()
         cin >> Type;
     }
 
+    Sleep(100);
     cout << "操作成功,请继续选择你要进行的操作" << '\n';
+    cout << "1:添加新消防设施" << '\n';
+    cout << "2:修改原有的消防设施" << '\n';
+    cout << "3:删除消防设施" << '\n';
+    cout << "4:退出该系统" << '\n';
     cout << "退出系统成功" << '\n';
 }
 
@@ -1034,6 +1060,13 @@ inline void change_Sa()
                 Sa[number].cost = Cost;
             }
             cout << "操作完成，请选择你的下一步操作" << '\n';
+            cout << "1:修改所维护的景观编号" << '\n';
+            cout << "2:修改维护种类" << '\n';
+            cout << "3:修改维护的完成人" << '\n';
+            cout << "4:修改维护信息的位置" << '\n';
+            cout << "5:修改维护信息的日期" << '\n';
+            cout << "6:修改本次维护的花费" << '\n';
+            cout << "7:退出该系统" << '\n';
             cin >> ch;
         }
         cout << "退出维护信息修改系统成功" << '\n';
