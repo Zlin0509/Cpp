@@ -66,7 +66,6 @@ struct User
     bool n3 = false; // 表示财务人员的权限
 };
 
-// map用来储存密码
 // 当前设置编号不能大于1e5，可根据实际需求进行修改
 set<int> all_user;
 vector<User> user_op(100001);
@@ -132,8 +131,10 @@ void read_from_data()
     {
         cout << "文件打开错误，正在初始化用户信息------------" << '\n';
         make_data();
+        Sleep(400);
+        cout << "=====================" << '\n';
         cout << "用户信息初始化成功" << '\n';
-        cout << "请重新选择你的操作" << '\n';
+        cout << "=====================" << '\n';
         return;
     }
     else
@@ -149,13 +150,16 @@ void read_from_data()
             user_op[xx.user_number].n3 = xx.n3;
             all_user.insert(xx.user_number);
         }
+        cout << "=====================" << '\n';
         cout << "用户信息读取完成" << '\n';
+        cout << "=====================" << '\n';
     }
     // 读取景观信息;
     p = fopen("list_at.dat", "r");
     if (p == NULL)
     {
         cout << "ERROR:景观信息读取失败" << '\n';
+        cout << "=====================" << '\n';
     }
     else
     {
@@ -171,6 +175,7 @@ void read_from_data()
             at_number.insert(xx.at_number);
         }
         cout << "景观信息读取成功" << '\n';
+        cout << "=====================" << '\n';
         fclose(p);
     }
 
@@ -179,6 +184,7 @@ void read_from_data()
     if (p == NULL)
     {
         cout << "ERROR:维护信息读取失败" << '\n';
+        cout << "=====================" << '\n';
     }
     else
     {
@@ -196,6 +202,7 @@ void read_from_data()
             sa_number.insert(xx.save_number);
         }
         cout << "景观信息读取成功" << '\n';
+        cout << "=====================" << '\n';
         fclose(p);
     }
 
@@ -204,6 +211,7 @@ void read_from_data()
     if (p == NULL)
     {
         cout << "游客信息读取失败" << '\n';
+        cout << "=====================" << '\n';
     }
     else
     {
@@ -219,6 +227,7 @@ void read_from_data()
             to_number.insert(xx.to_number);
         }
         cout << "游客信息读取成功" << '\n';
+        cout << "=====================" << '\n';
         fclose(p);
     }
 
@@ -227,6 +236,7 @@ void read_from_data()
     if (p == NULL)
     {
         cout << "消防设施信息读取失败" << '\n';
+        cout << "=====================" << '\n';
     }
     else
     {
@@ -242,6 +252,7 @@ void read_from_data()
             fi_number.insert(xx.fi_number);
         }
         cout << "消防设施信息读取成功" << '\n';
+        cout << "=====================" << '\n';
         fclose(p);
     }
 }
@@ -250,7 +261,7 @@ void read_from_data()
 void Save_data()
 {
     cout << "正在保存更改，请不要关闭窗口" << '\n';
-    cout << "--------------------------" << '\n';
+    cout << "==========================" << '\n';
     FILE *p;
 
     p = fopen("list_user.dat", "w+");
@@ -292,25 +303,29 @@ void Save_data()
     fwrite(&all_fin, 1, sizeof(struct Fin), p);
     fclose(p);
 
-    cout << "------------------------" << '\n';
     Sleep(300);
+    cout << "==========================" << '\n';
     cout << "保存更改完毕，可以关闭窗口" << '\n';
+    cout << "==========================" << '\n';
 }
 
 // 增删改查用户
 inline void user1()
 {
     int Type;
+    cout << "=====================" << '\n';
     cout << "请选择你想进行的操作：" << '\n';
     cout << "1:增加新用户" << '\n';
     cout << "2:删除用户" << '\n';
     cout << "3:修改用户权限" << '\n';
     cout << "4:查询用户" << '\n';
     cout << "5:退出系统" << '\n';
+    cout << "=====================" << '\n';
     cin >> Type;
     int number;
     while (Type != 5)
     {
+        cout << '\n';
         if (Type == 1)
         {
             cout << "请输入你想增加的用户编号" << '\n';
@@ -422,10 +437,12 @@ inline void user1()
             {
                 // m表示修改操作类型，n表示要修改的权限类型
                 int m, n;
+                cout << "=====================" << '\n';
                 cout << "请选择你要进行的修改操作" << '\n';
                 cout << "1:删除用户权限" << '\n';
                 cout << "2:赋予用户权限" << '\n';
                 cout << "3:退出该系统" << '\n';
+                cout << "=====================" << '\n';
                 cin >> m;
                 while (m != 3)
                 {
@@ -461,10 +478,12 @@ inline void user1()
                         }
                     }
                     Sleep(100);
+                    cout << "=====================" << '\n';
                     cout << "操作成功，请继续选择你的修改操作" << '\n';
                     cout << "1:删除用户权限" << '\n';
                     cout << "2:赋予用户权限" << '\n';
                     cout << "3:退出该系统" << '\n';
+                    cout << "=====================" << '\n';
                     cin >> m;
                 }
                 cout << "权限修改成功" << '\n';
@@ -519,14 +538,15 @@ inline void user1()
             }
         }
 
-        Sleep(300);
+        Sleep(200);
+        cout << "=====================" << '\n';
         cout << "操作完成,请继续选择你的操作" << '\n';
-        cout << "请选择你想进行的操作：" << '\n';
         cout << "1:增加新用户" << '\n';
         cout << "2:删除用户" << '\n';
         cout << "3:修改用户权限" << '\n';
         cout << "4:查询用户" << '\n';
         cout << "5:退出系统" << '\n';
+        cout << "=====================" << '\n';
         cin >> Type;
     }
     cout << "退出成功" << '\n';
@@ -562,17 +582,22 @@ inline void user2()
         cout << "成功找到该人员编号" << '\n';
         int m, n;
         Sleep(100);
+        cout << "=====================" << '\n';
         cout << "请选择你要进行的修改操作" << '\n';
         cout << "1:删除用户权限" << '\n';
         cout << "2:赋予用户权限" << '\n';
         cout << "3:退出该系统" << '\n';
+        cout << "=====================" << '\n';
         cin >> m;
         while (m != 3)
         {
+            cout << '\n';
+            cout << "=====================" << '\n';
             cout << "请输入你要修改的具体权限：" << '\n';
             cout << "1:管理员权限" << '\n';
             cout << "2:操作员权限" << '\n';
             cout << "3:财务人员权限" << '\n';
+            cout << "=====================" << '\n';
             cin >> n;
             if (m == 1)
             {
@@ -606,10 +631,13 @@ inline void user2()
             }
             Sleep(100);
             cout << "权限修改成功" << '\n';
+            Sleep(200);
+            cout << "=====================" << '\n';
             cout << "请继续选择你的修改操作" << '\n';
             cout << "1:删除用户权限" << '\n';
             cout << "2:赋予用户权限" << '\n';
             cout << "3:退出该系统" << '\n';
+            cout << "=====================" << '\n';
             cin >> m;
         }
     }
@@ -686,12 +714,14 @@ inline void change_At()
         cout << "景观查找成功" << '\n';
         Sleep(100);
         int ch;
+        cout << "=====================" << '\n';
         cout << "请输入你要修改的元素:" << '\n';
         cout << "1:景观名称" << '\n';
         cout << "2:景观种类" << '\n';
         cout << "3:景观位置" << '\n';
         cout << "4:景观维护方式" << '\n';
         cout << "5:退出该系统" << '\n';
+        cout << "=====================" << '\n';
         cin >> ch;
         while (ch != 5)
         {
@@ -718,12 +748,14 @@ inline void change_At()
             }
 
             Sleep(100);
+            cout << "=====================" << '\n';
             cout << "操作完成，请选择你的下一步要修改的内容" << '\n';
             cout << "1:景观名称" << '\n';
             cout << "2:景观种类" << '\n';
             cout << "3:景观位置" << '\n';
             cout << "4:景观维护方式" << '\n';
             cout << "5:退出该系统" << '\n';
+            cout << "=====================" << '\n';
             cin >> ch;
         }
         cout << "退出景观修改系统成功" << '\n';
@@ -756,11 +788,13 @@ inline void del_At()
 inline void user3_At()
 {
     int Type;
+    cout << "=====================" << '\n';
     cout << "请选择你要进行的操作:" << '\n';
     cout << "1:添加新的景观信息" << '\n';
     cout << "2:修改原有的景观信息" << '\n';
     cout << "3:删除景观信息" << '\n';
     cout << "4:退出该系统" << '\n';
+    cout << "=====================" << '\n';
     cin >> Type;
     while (Type != 4)
     {
@@ -778,11 +812,13 @@ inline void user3_At()
         }
 
         Sleep(100);
+        cout << "=====================" << '\n';
         cout << "操作成功,请继续选择你要进行的操作" << '\n';
         cout << "1:添加新的景观信息" << '\n';
         cout << "2:修改原有的景观信息" << '\n';
         cout << "3:删除景观信息" << '\n';
         cout << "4:退出该系统" << '\n';
+        cout << "=====================" << '\n';
         cin >> Type;
     }
     cout << "退出系统成功" << '\n';
@@ -845,12 +881,14 @@ inline void change_Fi()
     else
     {
         int ch;
+        cout << "=====================" << '\n';
         cout << "请输入你要修改的元素:" << '\n';
         cout << "1:修改消防设施的种类" << '\n';
         cout << "2:修改消防设施的数量" << '\n';
         cout << "3:修改消防设施的位置" << '\n';
         cout << "4:修改消防设施的状态" << '\n';
         cout << "5:退出该系统" << '\n';
+        cout << "=====================" << '\n';
         cin >> ch;
         while (ch != 5)
         {
@@ -878,12 +916,14 @@ inline void change_Fi()
             }
 
             Sleep(100);
+            cout << "=====================" << '\n';
             cout << "操作完成，请选择你的下一步操作" << '\n';
             cout << "1:修改消防设施的种类" << '\n';
             cout << "2:修改消防设施的数量" << '\n';
             cout << "3:修改消防设施的位置" << '\n';
             cout << "4:修改消防设施的状态" << '\n';
             cout << "5:退出该系统" << '\n';
+            cout << "=====================" << '\n';
             cin >> ch;
         }
         cout << "退出消防设施修改系统成功" << '\n';
@@ -916,11 +956,13 @@ inline void del_Fi()
 inline void user3_Fi()
 {
     int Type;
+    cout << "=====================" << '\n';
     cout << "请选择你要进行的操作:" << '\n';
     cout << "1:添加新消防设施" << '\n';
     cout << "2:修改原有的消防设施" << '\n';
     cout << "3:删除消防设施" << '\n';
     cout << "4:退出该系统" << '\n';
+    cout << "=====================" << '\n';
     cin >> Type;
     while (Type != 4)
     {
@@ -940,12 +982,14 @@ inline void user3_Fi()
     }
 
     Sleep(100);
+    cout << "=====================" << '\n';
     cout << "操作成功,请继续选择你要进行的操作" << '\n';
     cout << "1:添加新消防设施" << '\n';
     cout << "2:修改原有的消防设施" << '\n';
     cout << "3:删除消防设施" << '\n';
     cout << "4:退出该系统" << '\n';
     cout << "退出系统成功" << '\n';
+    cout << "=====================" << '\n';
 }
 
 inline void add_Sa()
@@ -980,6 +1024,11 @@ inline void add_Sa()
         cout << "请输入维护种类:" << '\n';
         cout << "1:扫 2:擦 3:喷 4:剪 5:修" << '\n';
         cin >> Sa[number].sa_type;
+        while (Sa[number].sa_type > 5 || Sa[number].sa_type < 1)
+        {
+            cout << "输入格式错误，请重新输入:" << '\n';
+            cin >> Sa[number].sa_type;
+        }
         cout << "请输入执行维护的人员:" << '\n';
         cin >> Sa[number].finisher;
         cout << "请输入进行维护的位置:" << '\n';
@@ -1014,6 +1063,7 @@ inline void change_Sa()
     else
     {
         int ch;
+        cout << "=====================" << '\n';
         cout << "请输入你要修改的元素:" << '\n';
         cout << "1:修改所维护的景观编号" << '\n';
         cout << "2:修改维护种类" << '\n';
@@ -1022,6 +1072,7 @@ inline void change_Sa()
         cout << "5:修改维护信息的日期" << '\n';
         cout << "6:修改本次维护的花费" << '\n';
         cout << "7:退出该系统" << '\n';
+        cout << "=====================" << '\n';
         cin >> ch;
         while (ch != 7)
         {
@@ -1035,6 +1086,11 @@ inline void change_Sa()
                 cout << "请输入更改后的维护种类" << '\n';
                 cout << "1:扫 2:擦 3:喷 4:剪 5:修" << '\n';
                 cin >> Sa[number].sa_type;
+                while (Sa[number].sa_type > 5 || Sa[number].sa_type < 1)
+                {
+                    cout << "输入格式错误，请重新输入:" << '\n';
+                    cin >> Sa[number].sa_type;
+                }
             }
             else if (ch == 3)
             {
@@ -1059,6 +1115,8 @@ inline void change_Sa()
                 all_fin.out += Cost - Sa[number].cost;
                 Sa[number].cost = Cost;
             }
+            Sleep(200);
+            cout << "=====================" << '\n';
             cout << "操作完成，请选择你的下一步操作" << '\n';
             cout << "1:修改所维护的景观编号" << '\n';
             cout << "2:修改维护种类" << '\n';
@@ -1067,6 +1125,7 @@ inline void change_Sa()
             cout << "5:修改维护信息的日期" << '\n';
             cout << "6:修改本次维护的花费" << '\n';
             cout << "7:退出该系统" << '\n';
+            cout << "=====================" << '\n';
             cin >> ch;
         }
         cout << "退出维护信息修改系统成功" << '\n';
@@ -1100,11 +1159,13 @@ inline void del_Sa()
 inline void user3_Sa()
 {
     int Type;
+    cout << "=====================" << '\n';
     cout << "请选择你要进行的操作:" << '\n';
     cout << "1:记录新的维护操作" << '\n';
     cout << "2:修改原有的维护记录" << '\n';
     cout << "3:删除原有的维护记录" << '\n';
     cout << "4:退出该系统" << '\n';
+    cout << "=====================" << '\n';
     cin >> Type;
     while (Type != 4)
     {
@@ -1120,9 +1181,14 @@ inline void user3_Sa()
         {
             del_Sa();
         }
-
+        Sleep(200);
+        cout << "=====================" << '\n';
         cout << "操作成功,请继续选择你要进行的操作" << '\n';
-        cout << "或输入4退出该系统" << '\n';
+        cout << "1:记录新的维护操作" << '\n';
+        cout << "2:修改原有的维护记录" << '\n';
+        cout << "3:删除原有的维护记录" << '\n';
+        cout << "4:退出该系统" << '\n';
+        cout << "=====================" << '\n';
         cin >> Type;
     }
     cout << "退出系统成功" << '\n';
@@ -1132,11 +1198,13 @@ inline void user3_Sa()
 inline void user3()
 {
     int Type;
+    cout << "=====================" << '\n';
     cout << "请选择你要进行的操作:" << '\n';
     cout << "1:景观信息维护" << '\n';
     cout << "2:消防设施信息维护" << '\n';
     cout << "3:各景观维护信息统计" << '\n';
     cout << "4:退出该系统" << '\n';
+    cout << "=====================" << '\n';
     cin >> Type;
 
     while (Type != 4)
@@ -1153,8 +1221,14 @@ inline void user3()
         {
             user3_Sa();
         }
+        Sleep(200);
+        cout << "=====================" << '\n';
         cout << "操作完成,请继续选择你的操作" << '\n';
-        cout << "或输入4退出该系统" << '\n';
+        cout << "1:景观信息维护" << '\n';
+        cout << "2:消防设施信息维护" << '\n';
+        cout << "3:各景观维护信息统计" << '\n';
+        cout << "4:退出该系统" << '\n';
+        cout << "=====================" << '\n';
         cin >> Type;
     }
 
@@ -1177,6 +1251,7 @@ inline void add_To()
             cout << "该编号已经存在,请重新输入游客编号" << '\n';
         }
         cout << "或输入-1退出该系统" << '\n';
+        cin >> number;
     }
 
     if (number == -1)
@@ -1189,6 +1264,11 @@ inline void add_To()
         to_number.insert(number);
         cout << "请输入游客的性别:0-男,1-女" << '\n';
         cin >> To[number].to_sex;
+        while (To[number].to_sex > 1 || To[number].to_sex < 0)
+        {
+            cout << "输入格式错误，请重新输入:" << '\n';
+            cin >> To[number].to_sex;
+        }
 
         int age;
         cout << "请输入游客的年龄:" << '\n';
@@ -1212,6 +1292,12 @@ inline void add_To()
         cout << "请输入游客的游玩方式:" << '\n';
         cout << "0:散客游玩 1:跟团游玩" << '\n';
         cin >> To[number].to_type;
+        while (To[number].to_type > 1 || To[number].to_type < 0)
+        {
+            cout << "输入格式错误，请重新输入:" << '\n';
+            cin >> To[number].to_type;
+        }
+
         cout << "请输入游客的游玩时长" << '\n';
         cin >> To[number].to_time;
 
@@ -1248,6 +1334,7 @@ inline void change_To()
     else
     {
         int ch;
+        cout << "=====================" << '\n';
         cout << "请输入你要修改的元素:" << '\n';
         cout << "1:修改游客性别" << '\n';
         cout << "2:修改游客年龄" << '\n';
@@ -1255,12 +1342,19 @@ inline void change_To()
         cout << "4:修改游客游玩方式" << '\n';
         cout << "5:修改游客游玩时长" << '\n';
         cout << "6:退出该系统" << '\n';
+        cout << "=====================" << '\n';
         cin >> ch;
         while (ch != 6)
         {
             if (ch == 1)
             {
-                cout << "请输如更改后的有了性别:0-男,1-女" << '\n';
+                cout << "请输如更改后的有了性别:" << '\n';
+                cout << "0-男,1-女" << '\n';
+                while (To[number].to_sex > 1 || To[number].to_sex < 0)
+                {
+                    cout << "输入格式错误，请重新输入:" << '\n';
+                    cin >> To[number].to_sex;
+                }
                 cin >> To[number].to_sex;
             }
             else if (ch == 2)
@@ -1286,7 +1380,7 @@ inline void change_To()
             }
             else if (ch == 3)
             {
-                cout << "请输入更改后的完成人姓名" << '\n';
+                cout << "请输入更改后的完成人姓名:" << '\n';
                 cin >> To[number].at_name;
             }
             else if (ch == 4)
@@ -1295,6 +1389,12 @@ inline void change_To()
                 cout << "请输入更改后的游玩方式:" << '\n';
                 cout << "0:散客游玩 1:跟团游玩" << '\n';
                 cin >> type;
+                while (To[number].to_type > 1 || To[number].to_type < 0)
+                {
+                    cout << "输入格式错误，请重新输入:" << '\n';
+                    cin >> To[number].to_type;
+                }
+
                 // 更新财务账单
                 if (type == 1)
                 {
@@ -1322,7 +1422,16 @@ inline void change_To()
                 }
                 To[number].to_time = time;
             }
+            Sleep(200);
+            cout << "=====================" << '\n';
             cout << "操作完成，请选择你的下一步操作" << '\n';
+            cout << "1:修改游客性别" << '\n';
+            cout << "2:修改游客年龄" << '\n';
+            cout << "3:修改游客姓名" << '\n';
+            cout << "4:修改游客游玩方式" << '\n';
+            cout << "5:修改游客游玩时长" << '\n';
+            cout << "6:退出该系统" << '\n';
+            cout << "=====================" << '\n';
             cin >> ch;
         }
         cout << "退出游客信息修改系统成功" << '\n';
@@ -1371,12 +1480,14 @@ inline void check_Fin()
 inline void user4()
 {
     int Type;
+    cout << "=====================" << '\n';
     cout << "请选择你要进行的操作:" << '\n';
     cout << "1:添加新的游客信息" << '\n';
     cout << "2:修改原有的游客信息" << '\n';
     cout << "3:删除原有的游客信息" << '\n';
     cout << "4:查询账单" << '\n';
     cout << "5:退出该系统" << '\n';
+    cout << "=====================" << '\n';
     cin >> Type;
     while (Type != 5)
     {
@@ -1396,9 +1507,15 @@ inline void user4()
         {
             check_Fin();
         }
-
+        Sleep(200);
+        cout << "=====================" << '\n';
         cout << "操作完成,请继续选择你的操作" << '\n';
-        cout << "或输入5退出该系统" << '\n';
+        cout << "1:添加新的游客信息" << '\n';
+        cout << "2:修改原有的游客信息" << '\n';
+        cout << "3:删除原有的游客信息" << '\n';
+        cout << "4:查询账单" << '\n';
+        cout << "5:退出该系统" << '\n';
+        cout << "=====================" << '\n';
         cin >> Type;
     }
     cout << "退出财务管理系统成功" << '\n';
@@ -1406,10 +1523,18 @@ inline void user4()
 
 int main()
 {
+    cout << "系统启动成功" << "\n";
     // 初始化管理员权限
     read_from_data();
 
+    cout << "*******************************" << '\n';
+    cout << "      欢迎使用公园管理系统！" << '\n';
+    cout << "*******************************" << '\n';
+    cout << '\n';
+    Sleep(400);
+    cout << "=====================" << '\n';
     cout << "请输入要登陆的账号" << '\n';
+    cout << "=====================" << '\n';
     // start：输入的人员编号
     int start;
     cin >> start;
@@ -1448,12 +1573,14 @@ int main()
             int Op;
             // 如果该人员是管理员,默认管理员拥有所有权限
             cout << "欢迎使用该系统，管理员" << '\n';
+            cout << "=====================" << '\n';
             cout << "请选择你想进行的操作:" << '\n';
             cout << "1:增删改查用户" << '\n';
             cout << "2:分配权限" << '\n';
             cout << "3:其他信息操作" << '\n';
             cout << "4:处理财务信息" << '\n';
             cout << "5:结束操作" << '\n';
+            cout << "=====================" << '\n';
             cin >> Op;
             while (Op != 5)
             {
@@ -1476,23 +1603,27 @@ int main()
                     user4();
                 }
                 cout << "操作成功，请选择你的下一步操作" << '\n';
+                cout << "=====================" << '\n';
                 cout << "1:增删改查用户" << '\n';
                 cout << "2:分配权限" << '\n';
                 cout << "3:其他信息操作" << '\n';
                 cout << "4:处理财务信息" << '\n';
                 cout << "5:结束操作" << '\n';
+                cout << "=====================" << '\n';
                 cin >> Op;
             }
         }
         else if (user_op[start].n2 == true)
         {
             // 如果该员工是操作员
+            cout << "欢迎使用该系统,操作员" << '\n';
             cout << '\n';
             user2();
         }
         else if (user_op[start].n3 == true)
         {
             // 如果该人员是财务人员
+            cout << "欢迎使用该系统,财务人员" << '\n';
             cout << '\n';
             user3();
         }
@@ -1501,8 +1632,10 @@ int main()
             // 如果没有任何权限
             cout << "抱歉，你没有权限访问这个系统" << '\n';
         }
+        cout << "=====================" << '\n';
         cout << "操作完成,请输入新的员工编号:" << '\n';
         cout << "或输入-1退出该系统" << '\n';
+        cout << "=====================" << '\n';
         cin >> start;
     }
     cout << "退出系统成功,欢迎下次使用" << '\n';
