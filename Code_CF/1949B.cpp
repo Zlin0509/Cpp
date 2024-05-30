@@ -5,40 +5,40 @@ using ll = long long;
 using vl = vector<long long>;
 using vi = vector<int>;
 
+int a[100010]{}, b[100010]{};
+int n, ans;
+
+void check(int t)
+{
+    int res = 1e9;
+    for (int i = 1; i <= t; i++)
+    {
+        res = min(res, abs(a[i] - b[i + n - t]));
+    }
+    for (int i = t + 1; i <= n; i++)
+    {
+        res = min(res, abs(a[i] - b[i - t]));
+    }
+    ans = max(ans, res);
+}
+
 void solve()
 {
-    int n;
+    ans = 0;
     cin >> n;
-    vi a(n), b(n);
-    for (int i = 0; i < n; i++)
+    for (int i = 1; i <= n; i++)
         cin >> a[i];
-    for (int i = 0; i < n; i++)
+    for (int i = 1; i <= n; i++)
         cin >> b[i];
-    sort(a.begin(), a.end());
-    sort(b.begin(), b.end());
-    int ans = INT_MAX;
-    if (n & 1)
+
+    sort(a + 1, a + n + 1);
+    sort(b + 1, b + n + 1);
+
+    for (int t = 1; t <= n; t++)
     {
-        int n1 = abs(a[n - 1] - b[n / 2]), n2 = abs(b[n - 1] - a[n / 2]);
-        for (int i = 0; i < n / 2; i++)
-        {
-            n1 = min(n1, abs(a[i + 1] - b[i + 1 + n / 2]));
-            n1 = min(n1, abs(b[i] - a[i + 1 + n / 2]));
-        }
-        for (int i = 0; i < n / 2; i++)
-        {
-            n2 = min(n2, abs(a[i] - b[i + n / 2]));
-            n2 = min(n2, abs(b[i] - a[i + 1 + n / 2]));
-        }
-        cout << max(n1, n2) << '\n';
-        return;
+        check(t);
     }
-    for (int i = 0; i < n / 2; i++)
-    {
-        ans = min(ans, abs(a[i + n / 2] - b[i]));
-        ans = min(ans, abs(b[i + n / 2] - a[i]));
-    }
-    cout << ans << '\n';
+    cout << ans << endl;
 }
 
 int main()
