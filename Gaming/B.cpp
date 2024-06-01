@@ -5,34 +5,34 @@ using ll = long long;
 using vi = vector<int>;
 using vll = vector<long long>;
 
-int n;
-ll a[200010]{}, b[200010]{};
-ll ans, m;
+ll a[10001]{}, b[10001]{};
 
 void solve()
 {
-    bool check = false;
-    ans = 1;
-    m = INT_MAX;
-    cin >> n;
-    for (int i = 0; i < n; i++)
-        cin >> a[i];
-    for (int i = 0; i <= n; i++)
-        cin >> b[i];
-    for (int i = 0; i < n; i++)
+    ll n, m;
+    cin >> n >> m;
+    if (m == 0)
     {
-        ans += abs(a[i] - b[i]);
-        if ((a[i] <= b[n] && b[i] >= b[n]) || (b[i] <= b[n] && a[i] >= b[n]))
-            check = true;
-        m = min(m, abs(a[i] - b[n]));
-        m = min(m, abs(b[i] - b[n]));
-    }
-    if (check)
-    {
-        cout << ans << '\n';
+        cout << n << '\n';
         return;
     }
-    cout << ans + m << '\n';
+    ll l = max(0ll, n - m), r = n + m;
+    int l1 = 64 - __builtin_clzll(l), r1 = 64 - __builtin_clzll(r);
+    // cout << l1 << ' ' << r1 << '\n';
+    if (l1 < r1 || l == 0)
+    {
+        cout << (1ll << r1) - 1 << '\n';
+        return;
+    }
+    int x = r1;
+    ll z = 0;
+    while ((l & (1ll << x)) == (r & (1ll << x)))
+    {
+        z += (l & (1ll << x));
+        --x;
+    }
+    // cout << x << " " << r1 << '\n';
+    cout << z + (1ll << (x + 1)) - 1 << '\n';
 }
 
 int main()
