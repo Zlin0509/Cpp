@@ -1,7 +1,35 @@
-#include <bits/stdc++.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include <algorithm>
+#include <bitset>
+#include <complex>
+#include <deque>
+#include <exception>
+#include <fstream>
+#include <functional>
+#include <iomanip>
+#include <ios>
+#include <iosfwd>
 #include <iostream>
+#include <istream>
+#include <iterator>
+#include <limits>
+#include <list>
+#include <locale>
+#include <map>
+#include <memory>
+#include <new>
+#include <numeric>
+#include <ostream>
+#include <queue>
+#include <set>
+#include <sstream>
+#include <stack>
+#include <stdexcept>
+#include <streambuf>
+#include <string>
+#include <typeinfo>
+#include <utility>
+#include <valarray>
+#include <vector>
 #include <windows.h>
 using namespace std;
 
@@ -367,6 +395,38 @@ inline void user1()
                     cin >> P1;
                     cout << "请再次输入登陆密码" << '\n';
                     cin >> P2;
+                }
+                int check;
+                cout << "请给新账号分配权限：(1-给予 2-不给予)" << '\n';
+                cout << "1:管理员权限" << '\n';
+                cin >> check;
+                if (check == 1)
+                {
+                    user_op[number].n1 = true;
+                }
+                else
+                {
+                    user_op[number].n1 = false;
+                }
+                cout << "2:操作人员权限" << "\n";
+                cin >> check;
+                if (check == 1)
+                {
+                    user_op[number].n2 = true;
+                }
+                else
+                {
+                    user_op[number].n2 = false;
+                }
+                cout << "3:财务人员权限" << '\n';
+                cin >> check;
+                if (check == 1)
+                {
+                    user_op[number].n3 = true;
+                }
+                else
+                {
+                    user_op[number].n3 = false;
                 }
                 user_op[number].pa = P1;
                 user_op[number].user_number = number;
@@ -1586,10 +1646,11 @@ int main()
             cout << "2:分配权限" << '\n';
             cout << "3:其他信息操作" << '\n';
             cout << "4:处理财务信息" << '\n';
-            cout << "5:结束操作" << '\n';
+            cout << "5:显示当前用户名单" << '\n';
+            cout << "6:退出系统" << '\n';
             cout << "=====================" << '\n';
             cin >> Op;
-            while (Op != 5)
+            while (Op != 6)
             {
                 // 在进入新系统前重新换行，规整
                 cout << '\n';
@@ -1609,13 +1670,31 @@ int main()
                 {
                     user4();
                 }
+                else if (Op == 5)
+                {
+                    cout << "当前系统人员如下：" << '\n';
+                    for (auto it : all_user)
+                    {
+                        cout << "用户编号：" << it << "\t";
+                        cout << "管理员权限：";
+                        user_op[it].n1 ? cout << "是" : cout << "否";
+                        cout << '\t';
+                        cout << "操作人员权限：";
+                        user_op[it].n2 ? cout << "是" : cout << "否";
+                        cout << '\t';
+                        cout << "财务人员权限：";
+                        user_op[it].n3 ? cout << "是" : cout << "否";
+                        cout << '\n';
+                    }
+                }
                 cout << "操作成功，请选择你的下一步操作" << '\n';
                 cout << "=====================" << '\n';
                 cout << "1:增删改查用户" << '\n';
                 cout << "2:分配权限" << '\n';
                 cout << "3:其他信息操作" << '\n';
                 cout << "4:处理财务信息" << '\n';
-                cout << "5:结束操作" << '\n';
+                cout << "5:显示当前用户名单" << '\n';
+                cout << "6:退出系统" << '\n';
                 cout << "=====================" << '\n';
                 cin >> Op;
             }
