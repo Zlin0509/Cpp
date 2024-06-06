@@ -1,10 +1,6 @@
 #include <algorithm>
-#include <bitset>
 #include <complex>
-#include <deque>
 #include <exception>
-#include <fstream>
-#include <functional>
 #include <iomanip>
 #include <ios>
 #include <iosfwd>
@@ -15,20 +11,11 @@
 #include <list>
 #include <locale>
 #include <map>
-#include <memory>
-#include <new>
-#include <numeric>
-#include <ostream>
-#include <queue>
 #include <set>
 #include <sstream>
-#include <stack>
 #include <stdexcept>
 #include <streambuf>
 #include <string>
-#include <typeinfo>
-#include <utility>
-#include <valarray>
 #include <vector>
 #include <windows.h>
 using namespace std;
@@ -629,7 +616,7 @@ inline void user2()
     while (number != -1 && (number > 10000 || all_user.find(number) == all_user.end()))
     {
         Sleep(100);
-        if (number < 10000)
+        if (number > 10000)
         {
             cout << "你输入的用户编号格式错误,请重新输入" << '\n';
         }
@@ -737,6 +724,7 @@ inline void add_At()
     }
     else
     {
+        at_number.insert(number);
         At[number].at_number = number;
         cout << "请输入景观名称:\n";
         cin >> At[number].at_name;
@@ -915,6 +903,7 @@ inline void add_Fi()
     }
     else
     {
+        fi_number.insert(number);
         Fi[number].fi_number = number;
         cout << "请输入消防设施种类:\n";
         cout << "1:消火栓 2:水桶 3:消防车" << '\n';
@@ -1088,6 +1077,24 @@ inline void add_Sa()
         sa_number.insert(number);
         cout << "请输入对应维护的景观编号:" << '\n';
         cin >> Sa[number].at_number;
+        while (Sa[number].at_number != -1 && (Sa[number].at_number > 1e5 || at_number.find(Sa[number].at_number) == at_number.end()))
+        {
+            if (Sa[number].at_number > 1e5)
+            {
+                cout << "输入格式错误，请重新输入景观编号" << '\n';
+            }
+            else
+            {
+                cout << "未找到该景观编号，请重新输入" << '\n';
+            }
+            cout << "或输入-1退出该系统" << '\n';
+            cin >> Sa[number].at_number;
+        }
+        if (Sa[number].at_number == -1)
+        {
+            cout << "添加失败" << '\n';
+            return;
+        }
         cout << "请输入维护种类:" << '\n';
         cout << "1:扫 2:擦 3:喷 4:剪 5:修" << '\n';
         cin >> Sa[number].sa_type;
@@ -1526,11 +1533,11 @@ inline void del_To()
         to_number.erase(number);
         if (To[number].to_type == 1)
         {
-            all_fin.out -= To[number].to_time * price[3];
+            all_fin.in -= To[number].to_time * price[3];
         }
         else
         {
-            all_fin.out -= To[number].to_time * price[To[number].to_age];
+            all_fin.in -= To[number].to_time * price[To[number].to_age];
         }
         cout << "删除成功" << '\n';
     }
