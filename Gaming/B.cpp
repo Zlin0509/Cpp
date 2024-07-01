@@ -5,34 +5,30 @@ using ll = long long;
 using vi = vector<int>;
 using vll = vector<long long>;
 
-ll a[10001]{}, b[10001]{};
-
-void solve()
+int n;
+int ans = 0;
+struct Tree
 {
-    ll n, m;
-    cin >> n >> m;
-    if (m == 0)
-    {
-        cout << n << '\n';
+    int l, r;
+    int tag;
+} t[400010]{};
+
+void push_down(int i)
+{
+}
+
+void change(int l, int r, int k, int i)
+{
+    if (t[i].l > r || t[i].r < l)
         return;
-    }
-    ll l = max(0ll, n - m), r = n + m;
-    int l1 = 64 - __builtin_clzll(l), r1 = 64 - __builtin_clzll(r);
-    // cout << l1 << ' ' << r1 << '\n';
-    if (l1 < r1 || l == 0)
-    {
-        cout << (1ll << r1) - 1 << '\n';
-        return;
-    }
-    int x = r1;
-    ll z = 0;
-    while ((l & (1ll << x)) == (r & (1ll << x)))
-    {
-        z += (l & (1ll << x));
-        --x;
-    }
-    // cout << x << " " << r1 << '\n';
-    cout << z + (1ll << (x + 1)) - 1 << '\n';
+    push_down(i);
+    if (t[i].l >= l && t[i].r <= r)
+        t[i].tag += k;
+    int mid = l + r >> 1;
+    if (mid >= l)
+        change(l, r, k, i * 2);
+    if (mid + 1 <= r)
+        change(l, r, k, i * 2 + 1);
 }
 
 int main()
@@ -41,8 +37,5 @@ int main()
     cin.tie(0);
     cout.tie(0);
 
-    int T;
-    cin >> T;
-    while (T--)
-        solve();
+    cin >> n;
 }

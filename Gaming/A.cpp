@@ -1,21 +1,22 @@
 #include "bits/stdc++.h"
 using namespace std;
 
-using ll = long long;
+using ll = unsigned long long;
 using vi = vector<int>;
 using vll = vector<long long>;
 
-void solve()
+ll n;
+ll a[100010]{}, b[100010]{};
+ll l, r, c, mid, z;
+
+ll check(ll t)
 {
-    ll l, r;
-    cin >> l >> r;
-    ll n = 1, num = 0;
-    // while (n <= l)
-    //     n *= 2, ++num;
-    while (r / n >= 2)
-        n *= 2, ++num;
-    // cout << n << '\n';
-    cout << num << '\n';
+    ll sum = 0;
+    for (int i = 1; i <= n; i++)
+        if (t >= b[i])
+            sum += 1 + (t - b[i]) / a[i];
+    // cout << sum << '\n';
+    return sum;
 }
 
 int main()
@@ -24,8 +25,27 @@ int main()
     cin.tie(0);
     cout.tie(0);
 
-    int T;
-    cin >> T;
-    while (T--)
-        solve();
+    cin >> n;
+    for (int i = 1; i <= n; i++)
+        cin >> a[i];
+    for (int i = 1; i <= n; i++)
+        cin >> b[i];
+    cin >> l >> r >> c;
+    z = check(l - 1);
+    while (l < r)
+    {
+        mid = (l + r) / 2ll;
+        if (check(mid) - z < c)
+            l = mid + 1;
+        else
+            r = mid;
+        // cout << mid << ' ';
+        // cout << check(l) << '\n';
+    }
+    // cout << l << '\n';
+
+    if (check(l) - z < c)
+        cout << "-1";
+    else
+        cout << l;
 }
