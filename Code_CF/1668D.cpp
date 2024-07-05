@@ -6,6 +6,10 @@ using ull = unsigned long long;
 using vll = vector<long long>;
 using vi = vector<int>;
 
+void add()
+{
+}
+
 void solve()
 {
 }
