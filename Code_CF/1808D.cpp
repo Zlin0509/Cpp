@@ -2,20 +2,12 @@
 using namespace std;
 
 using ll = long long;
-using vi = vector<int>;
+using ull = unsigned long long;
 using vll = vector<long long>;
-
-int n;
+using vi = vector<int>;
 
 void solve()
 {
-    cin >> n;
-    if (n % 3 == 0)
-        cout << n / 3 << ' ' << n / 3 << '\n';
-    else if (n % 3 == 1)
-        cout << n / 3 + 1 << ' ' << n / 3  << '\n';
-    else
-        cout << n / 3 << ' ' << n / 3 + 1 << '\n';
 }
 
 int main()
