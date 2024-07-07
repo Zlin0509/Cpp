@@ -5,7 +5,7 @@ using ll = long long;
 using vi = vector<int>;
 using vll = vector<ll>;
 
-int n;
+int n, len;
 int ans[100010]{}, t[100010]{};
 int a[100010]{}, c[100010]{};
 int tot = 0, head[100010]{};
@@ -41,12 +41,11 @@ int ask(int l, int r)
 
 void dfs(int u)
 {
+    ans[u] = -ask(a[u] + 1, len);
     for (int i = head[u]; i; i = e[i].next)
-    {
-        add(a[e[i].to], 1);
         dfs(e[i].to);
-    }
-    ans[u] = ask(1, a[u]);
+    ans[u] += ask(a[u] + 1, len);
+    add(a[u], 1);
 }
 
 int main()
@@ -59,7 +58,7 @@ int main()
     for (int i = 1; i <= n; i++)
         cin >> a[i], c[i] = a[i];
     sort(c + 1, c + 1 + n);
-    int len = unique(c + 1, c + 1 + n) - c - 1;
+    len = unique(c + 1, c + 1 + n) - c - 1;
     for (int i = 1; i <= n; i++)
         a[i] = lower_bound(c + 1, c + 1 + len, a[i]) - c;
     for (int i = 2, j; i <= n; i++)

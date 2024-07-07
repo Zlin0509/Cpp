@@ -3,11 +3,9 @@ using namespace std;
 
 using ll = long long;
 using vi = vector<int>;
-using vll = vector<long long>;
+using vll = vector<ll>;
 
-void solve()
-{
-}
+int n, m, l, r;
 
 int main()
 {
@@ -15,8 +13,14 @@ int main()
     cin.tie(0);
     cout.tie(0);
 
-    int ttt;
-    cin >> ttt;
-    while (ttt--)
-        solve();
+    cin >> n;
+
+    cin >> m;
+    while (m--)
+    {
+        cin >> l >> r;
+        
+    }
+
+    return 0;
 }
