@@ -5,9 +5,7 @@ using ll = long long;
 using vi = vector<int>;
 using vll = vector<long long>;
 
-void solve()
-{
-}
+int n, m, p;
 
 int main()
 {
@@ -15,8 +13,6 @@ int main()
     cin.tie(0);
     cout.tie(0);
 
-    int ttt;
-    cin >> ttt;
-    while (ttt--)
-        solve();
+    cin >> n >> m >> p;
+    
 }
