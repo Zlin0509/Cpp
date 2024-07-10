@@ -5,9 +5,27 @@ using ll = long long;
 using vi = vector<int>;
 using vll = vector<long long>;
 
-int n, m;
-int a[2001]{}, b[2001]{};
-int used[1000010]{};
+void solve()
+{
+    char a[55][55]{};
+    int n;
+    cin >> n;
+    for (int i = 1; i <= n; i++)
+        for (int j = 1; j <= n; j++)
+            cin >> a[i][j];
+    for (int i = 1; i < n; i++)
+    {
+        for (int j = 1; j < n; j++)
+        {
+            if (a[i][j] == '1' && a[i + 1][j] == '0' && a[i][j + 1] == '0')
+            {
+                cout << "NO" << '\n';
+                return;
+            }
+        }
+    }
+    cout << "YES" << '\n';
+}
 
 int main()
 {
@@ -15,27 +33,8 @@ int main()
     cin.tie(0);
     cout.tie(0);
 
-    cin >> n;
-    for (int i = 1; i <= n; i++)
-    {
-        cin >> a[i];
-        ++used[a[i]];
-    }
-    cin >> m;
-    for (int i = 1; i <= m; i++)
-    {
-        cin >> b[i];
-        ++used[b[i]];
-    }
-    for (int i = 1; i <= n; i++)
-    {
-        for (int j = 1; j <= m; j++)
-        {
-            if (!used[a[i] + b[j]])
-            {
-                cout << a[i] << ' ' << b[j];
-                return 0;
-            }
-        }
-    }
+    int ttt;
+    cin >> ttt;
+    while (ttt--)
+        solve();
 }

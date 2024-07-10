@@ -1,25 +1,44 @@
 #include "bits/stdc++.h"
 using namespace std;
-int n, z;
+
+using ll = long long;
+using vi = vector<int>;
+using vll = vector<long long>;
+
+ll n, ans = 0;
 int a[200010]{};
-bool check(int k)
+
+void solve()
 {
-    for (int i = 1; i <= k; i++)
-        if (a[n - k + i] - a[i] < z)
-            return true;
-    return false;
+    cin >> n;
+    ans = 0;
+    for (int i = 1; i <= n; i++)
+    {
+        cin >> a[i];
+        ans += a[i];
+    }
+    ans -= a[n];
+    bool check = false;
+    for (int i = 1; i < n; i++)
+    {
+        if (a[i])
+        {
+            check = true;
+        }
+        if (!a[i] && check)
+            ++ans;
+    }
+    cout << ans << '\n';
 }
+
 int main()
 {
-    cin >> n >> z;
-    for (int i = 1; i <= n; i++)
-        cin >> a[i];
-    sort(a + 1, a + 1 + n);
-    int l = 0, r = n / 2, mid;
-    while (l < r)
-    {
-        mid = l + r + 1 >> 1;
-        check(mid) ? r = mid - 1 : l = mid;
-    }
-    cout << l;
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+
+    int ttt;
+    cin >> ttt;
+    while (ttt--)
+        solve();
 }

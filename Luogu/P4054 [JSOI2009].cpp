@@ -3,11 +3,7 @@ using namespace std;
 
 using ll = long long;
 using vi = vector<int>;
-using vll = vector<long long>;
-
-void solve()
-{
-}
+using vll = vector<ll>;
 
 int main()
 {
@@ -15,8 +11,5 @@ int main()
     cin.tie(0);
     cout.tie(0);
 
-    int ttt;
-    cin >> ttt;
-    while (ttt--)
-        solve();
+    return 0;
 }
