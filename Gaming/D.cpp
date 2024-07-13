@@ -1,73 +1,75 @@
 #include "bits/stdc++.h"
 using namespace std;
 
-using ll = long long;
+using ll = unsigned long long;
 using vi = vector<int>;
 using vll = vector<long long>;
 
-int n, m, l, r, l1, r1;
-int a[200010]{};
-ll sum[200010]{}, ans = 0;
-priority_queue<int, vi, greater<int>> b;
+void solve()
+{
+}
 
 int main()
 {
     ios::sync_with_stdio(false);
     cin.tie(0);
     cout.tie(0);
-    cin >> n >> m;
-    for (int i = 1; i <= n; i++)
-        cin >> a[i], sum[i] = sum[i - 1] + a[i];
-    for (int i = 1, x; i <= m; i++)
+
+    int a, b, c, sum = 0;
+    ll n, k1, k2;
+    cin >> a >> b >> c >> n;
+    if (a == b)
     {
-        cin >> x, b.push(x + 100);
+        sum++;
     }
-    r = b.top(), b.pop();
-    if (r % 100)
-        r1 = r / 100;
-    else
-        r1 = r / 100 - 1;
-    ans = sum[min(r1, n)];
-    while (!b.empty())
+    if (a == c)
     {
-        l = r;
-        r = b.top(), b.pop();
-        if (r > n * 100)
-            break;
-        l1 = l / 100 + 1;
-        r1 = (r % 100 ? r / 100 : r / 100 - 1);
-        for (int i = l1, xx, yy, yy1; i <= r1; i++)
-        {
-            xx = i * 100;
-            yy1 = xx * 2 - l + r;
-            yy1 = min(yy1, r * 2);
-            if (yy1 % 200)
-                yy = yy1 / 200;
+        sum++;
+    }
+    if (b == c)
+    {
+        sum++;
+    }
+    k1 = n;
+    k2 = n * n - 3 * n + 2;
+    int t1 = 1, t2 = 1;
+    ll q1 = k1, q2 = k2;
+    if(sum==1){
+        q2 = q2 / 2;
+    }
+    while (q1)
+    {
+        t1 = t1++;
+        q1 = q1 >> 1;
+    }
+    while (q2)
+    {
+        t2 = t2++;
+        q2 = q2 >> 1;
+    }
+    if(n==2){
+        cout << 0;
+    }
+    else{
+        if(sum==3){
+            if(n==3)
+                cout << 1;
+            else{
+                cout << n;
+            }
+        }
+        else{
+            if (t1 + t2 >= 64)
+            {
+                ll su1 = 1ll << t1;
+                ll su2 = 1ll << (64 - t1);
+                ll total = 0;
+                total = k1 % su1 * su2 + k2 % su2 * su1;
+            }
             else
-                yy = yy1 / 200 - 1;
-            ans = max(ans, sum[yy] - sum[i - 1]);
+            {
+                cout << k1 * k2 << "\n";
+            }
         }
     }
-    r1 = r / 100 + 1;
-    // cout << l << ' ' << r << '\n';
-    if (r1 < n + 1)
-        ans = max(ans, sum[n] - sum[r1 - 1]);
-    else
-    {
-        l1 = l / 100 + 1;
-        r1 = n;
-        for (int i = l1, xx, yy, yy1; i <= r1; i++)
-        {
-            xx = i * 100;
-            yy1 = xx * 2 - l + r;
-            yy1 = min(yy1, r * 2);
-            if (yy1 % 200)
-                yy = yy1 / 200;
-            else
-                yy = yy1 / 200 - 1;
-            yy = min(yy, n);
-            ans = max(ans, sum[yy] - sum[i - 1]);
-        }
-    }
-    cout << ans;
 }

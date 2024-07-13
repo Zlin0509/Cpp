@@ -5,66 +5,8 @@ using ll = long long;
 using vi = vector<int>;
 using vll = vector<long long>;
 
-int n;
-int used[1100][22]{};
-char c;
-int r, r1, r2, o, o1, o2;
-int dx[4] = {0, 0, 1, -1};
-int dy[4] = {1, -1, 0, 0};
-
-void dfs(int o, int r)
-{
-    if (r > 20)
-        return;
-    used[o][r] = 1;
-    for (int i = 0, oo, rr; i < 4; i++)
-    {
-        oo = (o + dx[i] + 1080) % 1080;
-        rr = max(r + dy[i], 0);
-        if (!used[oo][rr])
-            dfs(oo, rr);
-    }
-}
-
 void solve()
 {
-    for (int i = 0; i < 1080; i++)
-        memset(used[i], 0, sizeof(used[i]));
-    cin >> n;
-    while (n--)
-    {
-        cin >> c;
-        if (c == 'C')
-        {
-            cin >> r >> o1 >> o2;
-            if (o1 < o2)
-            {
-                for (int i = o1 * 3; i <= o2 * 3 + 1; i++)
-                    used[i][r] = -1;
-            }
-            else
-            {
-                for (int i = 0; i <= o2 * 3 + 1; i++)
-                    used[i][r] = -1;
-                for (int i = o1 * 3 + 1; i < 1080; i++)
-                    used[i][r] = -1;
-            }
-        }
-        else
-        {
-            cin >> r1 >> r2 >> o;
-            for (int i = r1; i <= r2; i++)
-                used[o * 3 + 1][i] = -1;
-        }
-    }
-    dfs(0, 0);
-    for (int i = 0; i < 1080; i++)
-        if (used[i][20] == 1)
-        {
-            cout << "YES" << '\n';
-            return;
-        }
-    cout << "NO" << '\n';
 }
 
 int main()

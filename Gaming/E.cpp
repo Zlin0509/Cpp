@@ -4,114 +4,55 @@ using namespace std;
 using ll = long long;
 using vi = vector<int>;
 using vll = vector<long long>;
+const int N = 2e5 + 10;
+int a[N] = {0}, b[N] = {0}, c[N];
 
 void solve()
 {
-    string a, b;
-    cin >> a >> b;
-    int l1, l2, i1 = 0, i2 = 0, sum1 = 0, sum2 = 0;
-    l1 = a.size();
-    while (i1 < l1)
+    int n, m, l;
+    cin >> n >> m >> l;
+    int j = 1;
+    for (int i = 1; i <= n; i++)
     {
-        if (a[i1] == 'B')
-            sum1++;
-        i1++;
-    }
-    l2 = b.size();
-    while (i2 < l2)
-    {
-        if (b[i2] == 'B')
+        int x, y;
+        cin >> x >> y;
+        int p;
+        if (l < y)
+            continue;
+        p = l - y;
+        // cout << p << "\n";
+        if (p >= x)
         {
-            sum2++;
-        }
-        i2++;
-    }
-    i1 = 0;
-    i2 = 0;
-    for (int i = 0; i < l1; i++)
-    {
-        if (a[i] != 'B')
-        {
-            a[i1] = a[i];
-            i1++;
-        }
-    }
-    for (int i = 0; i < l2; i++)
-    {
-        if (b[i] != 'B')
-        {
-            b[i2] = b[i];
-            i2++;
-        }
-    }
-    int k1 = 0, k2 = 0;
-    while (k1 < i1)
-    {
-        if (a[k1] == a[k1 + 1] && k1 + 1 < i1)
-        {
-            for (int i = k1; i < i1 - 2; i++)
-            {
-                a[i] = a[i + 2];
-            }
-            i1 = i1 - 2;
-            k1 = 0;
+            a[j] = 1;
+            b[j] = p + x;
+            j++;
         }
         else
         {
-            k1++;
+            a[j] = x - p;
+            b[j] = p + x;
+            j++;
         }
     }
-    while (k2 < i2)
+    j--;
+    sort(a + 1, a + j + 1);
+    sort(b + 1, b + j + 1);
+    // cout << a[1] << " " << b[1];
+    for (int i = 1; i <= j; i++)
     {
-        if (b[k2] == b[k2 + 1] && k2 + 1 < i2)
-        {
-            for (int i = k2; i < i2 - 2; i++)
-            {
-                b[i] = b[i + 2];
-            }
-            i2 = i2 - 2;
-            k2 = 0;
-        }
-        else
-        {
-            k2++;
-        }
+        // cout << a[i] << " " << b[i] << "\n";
     }
-    //cout << sum1 << " " << sum2 << "\n";
-    int o1, o2;
-    o1 = sum1 % 2;
-    o2 = sum2 % 2;
-    // cout << k2;
-    if ((k1 != k2) || (o1 != o2))
+    for (int i = 0; i < m; i++)
     {
-        cout << "NO" << "\n";
-    }
-    else
-    {
-        if (k1 == 0)
-        {
-            cout << "YES" << "\n";
-        }
-        else
-        {
-            int p = 0;
-            for (int i = 0; i < k1; i++)
-            {
-                if (a[i] != b[i])
-                {
-                    p = 1;
-                    break;
-                }
-            }
-            if (p == 0)
-            {
-                cout << "YES" << "\n";
-            }
-            else
-            {
-                cout << "NO" << "\n";
-            }
-        }
+        int p;
+        cin >> p;
+        int k1, k2;
+        k1 = upper_bound(a + 1, a + j + 1, p) - a;
+        k2 = upper_bound(b + 1, b + j + 1, p - 1) - b;
+        k1--;
+        k2--;
+        // cout << p << " " << k1 << " " << k2<<"\n";
+        cout << k1 - k2 << "\n";
     }
 }
 
@@ -120,10 +61,8 @@ int main()
     ios::sync_with_stdio(false);
     cin.tie(0);
     cout.tie(0);
-    int t;
-    cin >> t;
-    while (t-- > 0)
-    {
+
+    int ttt = 1;
+    while (ttt--)
         solve();
-    }
 }
