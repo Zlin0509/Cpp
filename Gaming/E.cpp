@@ -4,56 +4,72 @@ using namespace std;
 using ll = long long;
 using vi = vector<int>;
 using vll = vector<long long>;
-const int N = 2e5 + 10;
-int a[N] = {0}, b[N] = {0}, c[N];
-
+int a[1000005], b[1000005], c[1000005], d[1000005];
 void solve()
 {
-    int n, m, l;
-    cin >> n >> m >> l;
-    int j = 1;
-    for (int i = 1; i <= n; i++)
+    int n;
+    cin >> n;
+    for (int i = 1; i <= n;i++){
+        cin >> a[i];
+    }
+    for (int i = 3; i <= n;i++){
+        b[i] = i - 2;
+        c[i] = i - 2;
+    }
+    d[1] = 1;
+    d[n] = 1;
+    for (int i = 2; i <= n - 1;i++){
+        d[i] == 2;
+    }
+    if (a[1] == 2 || a[n] == 2)
     {
-        int x, y;
-        cin >> x >> y;
-        int p;
-        if (l < y)
-            continue;
-        p = l - y;
-        // cout << p << "\n";
-        if (p >= x)
-        {
-            a[j] = 1;
-            b[j] = p + x;
-            j++;
+            cout << "NO" << "\n";
+            return;
+    }
+    for (int i = 1; i <= n-1;i++){
+        if(a[i]==0){
+            if(b[i]-c[i]==0){
+                continue;
+            }
+            else{
+                if(b[i]>c[i]){
+                    b[i + 1]++;
+                }
+                else{
+                    c[i + 1]++;
+                }
+            }
         }
-        else
-        {
-            a[j] = x - p;
-            b[j] = p + x;
-            j++;
+        else if(a[i]==1){
+            if(b[i]-c[i]==1||c[i]-b[i]==1){
+                continue;
+            }
+            else{
+                b[i + 1]++;
+            }
+        }
+        else if(a[i]==2){
+            if(b[i]-c[i]==1||c[i]-b[i]==1){
+                if(b[i]>c[i]){
+                    c[i+1]++;
+                }
+                else{
+                    b[i + 1]++;
+                }
+            }
+            else{
+                cout << "NO" << "\n";
+                return;
+            }
         }
     }
-    j--;
-    sort(a + 1, a + j + 1);
-    sort(b + 1, b + j + 1);
-    // cout << a[1] << " " << b[1];
-    for (int i = 1; i <= j; i++)
-    {
-        // cout << a[i] << " " << b[i] << "\n";
+    if(b[n]-c[n]==a[n]||c[n]-b[n]==a[n]){
+        cout << "YES" << "\n";
     }
-    for (int i = 0; i < m; i++)
-    {
-        int p;
-        cin >> p;
-        int k1, k2;
-        k1 = upper_bound(a + 1, a + j + 1, p) - a;
-        k2 = upper_bound(b + 1, b + j + 1, p - 1) - b;
-        k1--;
-        k2--;
-        // cout << p << " " << k1 << " " << k2<<"\n";
-        cout << k1 - k2 << "\n";
+    else{
+        cout << "NO" << "\n";
     }
+    return;
 }
 
 int main()
@@ -62,7 +78,6 @@ int main()
     cin.tie(0);
     cout.tie(0);
 
-    int ttt = 1;
-    while (ttt--)
-        solve();
+
+    solve();
 }

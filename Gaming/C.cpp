@@ -5,30 +5,58 @@ using ll = long long;
 using vi = vector<int>;
 using vll = vector<long long>;
 
-int n, m, cnt, ans1 = 1100, ans2, End;
-int c[2200]{}, used[2200]{};
-queue<int> q;
-
-int tot = 0, head[2200]{};
-struct Edge
+int n, k, used[200010]{}, ans = 0, x;
+struct ss
 {
-    int to, next;
-} e[2200]{};
-void add(int u, int v)
+    int to, next, val;
+} e[200010]{};
+int tot = 0, head[200010]{};
+
+void add(int u, int v, int val)
 {
     ++tot;
     e[tot].to = v;
     e[tot].next = head[u];
+    e[tot].val = val;
     head[u] = tot;
 }
 
-void dfs(int u, int fa, int depth)
+bool dfs(int u, int fa)
 {
-    if (c[u])
-        ans2 = max(ans2, depth);
+    bool check = false, cc;
     for (int i = head[u]; i; i = e[i].next)
-        if (used[e[i].to] && e[i].to != fa)
-            dfs(e[i].to, u, depth + 1);
+        if (e[i].to != fa)
+        {
+            cc = dfs(e[i].to, u);
+            if (cc)
+                check = true;
+        }
+    if (check)
+        ++used[u];
+    if (used[u])
+        return 1;
+    return check;
+}
+
+void solve()
+{
+    cin >> n >> k;
+    for (int i = 1, u, v, val; i < n; i++)
+    {
+        cin >> u >> v >> val;
+        add(u, v, val);
+        add(v, u, val);
+    }
+    for (int i = 1; i <= k; i++)
+    {
+        cin >> x;
+        ++used[x];
+    }
+    dfs(x, x);
+    for (int i = 1; i <= n; i++)
+        if (used[i])
+            ++ans;
+    cout << ans;
 }
 
 int main()
@@ -36,35 +64,6 @@ int main()
     ios::sync_with_stdio(false);
     cin.tie(0);
     cout.tie(0);
-    cin >> n >> m;
-    for (int i = 1; i <= n; i++)
-        cin >> c[i];
-    for (int i = 1, u, v; i < n; i++)
-    {
-        cin >> u >> v;
-        add(u, v), add(v, u);
-    }
-    for (int i = 1, u; i <= n; i++)
-    {
-        memset(used, 0, sizeof(used));
-        cnt = 0;
-        q.push(i);
-        while (!q.empty())
-        {
-            u = q.front();
-            q.pop();
-            if (cnt >= m || used[u])
-                continue;
-            if (c[u])
-                ++cnt, End = u;
-            ++used[u];
-            for (int j = head[u]; j; j = e[j].next)
-                if (!used[e[j].next])
-                    q.push(e[j].to);
-        }
-        ans2 = 0;
-        dfs(End, End, 0);
-        ans1 = min(ans1, ans2);
-    }
-    cout << ans1;
+
+    solve();
 }

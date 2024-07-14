@@ -1,9 +1,13 @@
 #include "bits/stdc++.h"
 using namespace std;
 
-using ll = unsigned long long;
+using ll = long long;
 using vi = vector<int>;
 using vll = vector<long long>;
+
+void solve()
+{
+}
 
 int main()
 {
@@ -11,6 +15,8 @@ int main()
     cin.tie(0);
     cout.tie(0);
 
-    ll check = 1ll << 63 ;
-    cout << check * 3123124;
+    int ttt;
+    cin >> ttt;
+    while (ttt--)
+        solve();
 }
