@@ -1,11 +1,11 @@
 #include "bits/stdc++.h"
 using namespace std;
 #define lowbit(x) (x & (-x))
-using ll = long long;
-using vi = vector<int>;
-using vll = vector<ll>;
+#define ll long long
+#define vi vector<int>
+#define vll vector<ll>
 
-void Zlin()
+inline void Zlin()
 {
 }
 
