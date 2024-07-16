@@ -5,7 +5,7 @@ using ll = long long;
 using vi = vector<int>;
 using vll = vector<long long>;
 
-void solve()
+void Zlin()
 {
 }
 
@@ -18,5 +18,5 @@ int main()
     int ttt;
     cin >> ttt;
     while (ttt--)
-        solve();
+        Zlin();
 }

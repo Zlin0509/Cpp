@@ -5,13 +5,6 @@ using ll = long long;
 using vi = vector<int>;
 using vll = vector<ll>;
 
-const int N = 1e5 + 10;
-
-int a[N], b[N], c[N];
-int lena, lenb, lenc;
-
-
-
 void Zlin()
 {
 }
