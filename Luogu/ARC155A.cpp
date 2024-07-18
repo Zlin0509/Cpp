@@ -4,13 +4,10 @@ using namespace std;
 int n, k;
 char s[200010]{};
 
-
-
 void solve()
 {
     cin >> n >> k;
     cin >> s;
-    
 }
 
 int main()

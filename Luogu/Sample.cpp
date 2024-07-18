@@ -5,7 +5,7 @@ using ll = long long;
 using vi = vector<int>;
 using vll = vector<ll>;
 
-void Zlin()
+inline void Zlin()
 {
 }
 
