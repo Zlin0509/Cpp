@@ -21,12 +21,8 @@ int ST_query(int l, int r)
     return max(f[l][k], f[r - (1 << k) + 1][k]);
 }
 
-int main()
+inline void Zlin()
 {
-    ios::sync_with_stdio(false);
-    cin.tie(0);
-    cout.tie(0);
-
     cin >> n >> m;
     for (int i = 1; i <= n; i++)
         cin >> a[i];
@@ -37,4 +33,13 @@ int main()
         cin >> l >> r;
         cout << ST_query(l, r) << '\n';
     }
+}
+
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+    Zlin();
+    return 0;
 }
