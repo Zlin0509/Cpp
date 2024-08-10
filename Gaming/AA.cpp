@@ -7,6 +7,7 @@ using vll = vector<long long>;
 
 void solve()
 {
+    cout << 1;
 }
 
 int main()

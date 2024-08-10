@@ -1,5 +1,8 @@
 #include "bits/stdc++.h"
+using namespace std;
 int main()
 {
-    std::cout << 111;
+    int ttt;
+    cin >> ttt;
+    cout << ttt;
 }

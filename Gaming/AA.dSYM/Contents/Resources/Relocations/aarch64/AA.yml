@@ -1,0 +1,9 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/zlin/Desktop/Code/Cpp/Gaming/AA'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: __Z5solvev, symObjAddr: 0x0, symBinAddr: 0x100003E8C, symSize: 0x20 }
+  - { offsetInCU: 0x6A15, offset: 0x6A15, size: 0x8, addend: 0x0, symName: __Z5solvev, symObjAddr: 0x0, symBinAddr: 0x100003E8C, symSize: 0x20 }
+  - { offsetInCU: 0x6A2E, offset: 0x6A2E, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x20, symBinAddr: 0x100003EAC, symSize: 0xA4 }
+  - { offsetInCU: 0x6AFE, offset: 0x6AFE, size: 0x8, addend: 0x0, symName: __ZNSt3__19basic_iosIcNS_11char_traitsIcEEE3tieB8ue170006EPNS_13basic_ostreamIcS2_EE, symObjAddr: 0xC4, symBinAddr: 0x100003F50, symSize: 0x2C }
+...
