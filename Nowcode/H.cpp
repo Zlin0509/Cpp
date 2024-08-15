@@ -1,95 +1,100 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
-#include <cmath>
 
-using namespace std;
-const double tt = 3.141592652589;
-struct Point
-{
-    double x, y;
-    bool operator<(const Point &p) const
-    {
-        return x < p.x || (x == p.x && y < p.y);
-    }
-};
-double distSquared(const Point &p1, const Point &p2)
-{
-    return (p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y);
-}
-double cross(const Point &O, const Point &A, const Point &B)
-{
-    return (A.x - O.x) * (B.y - O.y) - (A.y - O.y) * (B.x - O.x);
-}
-vector<Point> convexHull(vector<Point> &points)
-{
-    int n = points.size(), k = 0;
-    if (n <= 1)
-        return points;
-    vector<Point> hull(2 * n);
-    sort(points.begin(), points.end());
-    for (int i = 0; i < n; ++i)
-    {
-        while (k >= 2 && cross(hull[k - 2], hull[k - 1], points[i]) <= 0)
-            k--;
-        hull[k++] = points[i];
-    }
+const int MOD = 998244353;
 
-    // 构建上半部分凸包
-    for (int i = n - 2, t = k + 1; i >= 0; --i)
-    {
-        while (k >= t && cross(hull[k - 2], hull[k - 1], points[i]) <= 0)
-            k--;
-        hull[k++] = points[i];
-    }
-
-    hull.resize(k - 1);
-    return hull;
-}
-double rotatingCalipers(const vector<Point> &hull)
+// Function to perform modular exponentiation
+long long mod_exp(long long base, long long exp, long long mod)
 {
-    int n = hull.size();
-    if (n == 1)
-        return 0;
-    if (n == 2)
-        return distSquared(hull[0], hull[1]);
-
-    double maxDist = 0;
-    int j = 1;
-    for (int i = 0; i < n; ++i)
+    long long result = 1;
+    while (exp > 0)
     {
-        while (abs(cross(hull[i], hull[(i + 1) % n], hull[j])) < abs(cross(hull[i], hull[(i + 1) % n], hull[(j + 1) % n])))
+        if (exp % 2 == 1)
         {
-            j = (j + 1) % n;
+            result = (result * base) % mod;
         }
-        maxDist = max(maxDist, distSquared(hull[i], hull[j]));
-        maxDist = max(maxDist, distSquared(hull[(i + 1) % n], hull[j]));
+        base = (base * base) % mod;
+        exp /= 2;
     }
-    return maxDist;
+    return result;
 }
-inline void Zlin()
+
+// Function to calculate modular inverse
+long long mod_inv(long long x, long long mod)
 {
-    int n, m;
-    vector<Point> p1(n), p2(m);
-    cin >> n;
-    for (int i = 0; i < n; ++i)
-        cin >> p1[i].x >> p1[i].y;
-    cin >> m;
-    for (int i = 0; i < n; ++i)
-        cin >> p2[i].x >> p2[i].y;
-    vector<Point> hull = convexHull(p2);
-    double maxDistSquared = rotatingCalipers(hull);
-    cout << "最远点对的距离为: " << sqrt(maxDistSquared) << endl;
+    return mod_exp(x, mod - 2, mod);
+}
+
+// Function to calculate winning probabilities
+std::pair<long long, long long> calculateProbabilities(int a, int b)
+{
+    std::vector<std::vector<double>> P(a + 1, std::vector<double>(b + 1, 0.0));
+
+    // Initialize base cases
+    for (int i = 0; i <= a; ++i)
+    {
+        for (int j = 0; j <= b; ++j)
+        {
+            if (i > j)
+            {
+                P[i][j] = 1.0;
+            }
+            else if (i < j)
+            {
+                P[i][j] = 0.0;
+            }
+        }
+    }
+
+    // Fill the DP table
+    for (int i = a; i >= 0; --i)
+    {
+        for (int j = b; j >= 0; --j)
+        {
+            if (i == a && j == b)
+                continue; // Skip the base case
+            if (i > j)
+            {
+                P[i][j] = 1.0;
+            }
+            else if (i < j)
+            {
+                P[i][j] = 0.0;
+            }
+            else
+            {
+                if (i + i <= a + b && j - i >= 0)
+                {
+                    int next_i = std::min(2 * i, a);
+                    int next_j = std::max(j - i, 0);
+                    P[i][j] = 0.5 * P[next_i][next_j] + 0.5 * P[i][next_j];
+                }
+            }
+        }
+    }
+
+    long long p1_num = static_cast<long long>(P[a][b] * MOD) % MOD;
+    long long p2_num = (MOD - p1_num) % MOD;
+
+    long long p1_den_inv = mod_inv(MOD, MOD);
+    long long p2_den_inv = mod_inv(MOD, MOD);
+
+    long long result_p1 = (p1_num * p1_den_inv) % MOD;
+    long long result_p2 = (p2_num * p2_den_inv) % MOD;
+
+    return {result_p1, result_p2};
 }
 
 int main()
 {
-    ios::sync_with_stdio(false);
-    cin.tie(0);
-    cout.tie(0);
-    int ttt;
-    cin >> ttt;
-    while (ttt--)
-        Zlin();
+    int a, b;
+    std::cin >> a >> b;
+
+    // Calculate the probabilities
+    auto [prob_p1, prob_p2] = calculateProbabilities(a, b);
+
+    // Print results
+    std::cout << prob_p1 << " " << prob_p2 << std::endl;
+
     return 0;
 }

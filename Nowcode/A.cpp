@@ -1,36 +1,23 @@
 #include "bits/stdc++.h"
 using namespace std;
-int n, m;
-char x[550][550];
-int len1, len2;
+string x;
+int cnt1, cnt2;
 inline void Zlin()
 {
-    cin >> n >> m;
-    bool x1 = 0, x2 = 0;
-    for (int i = 1; i <= n; i++)
+    cin >> x;
+    for (int i = 0; i < 5; i++)
     {
-        for (int j = 1; j <= m; j++)
-        {
-            cin >> x[i][j];
-            if (x[i][j] == 'x')
-            {
-                x2 = 1;
-                if (!x1)
-                    ++len2;
-            }
-        }
-        x1 = len2;
-        if (x2)
-            ++len1, x2 = 0;
+        if (x[i] == 'Y')
+            ++cnt1;
+        if (x[i] == 'N')
+            ++cnt2;
     }
-    int z = gcd(len1, len2);
-    len1 /= z, len2 /= z;
-    for (int i = 1; i <= len1; i++)
-    {
-        for (int j = 1; j <= len2; j++)
-            cout << 'x';
-        cout << '\n';
-    }
+    if (cnt1 < 4 && cnt2 < 2)
+        cout << 0;
+    if (cnt1 >= 4)
+        cout << 1;
+    if (cnt2 >= 2)
+        cout << -1;
 }
 int main()
 {
