@@ -1,23 +1,15 @@
 #include "bits/stdc++.h"
 using namespace std;
-
-using ll = long long;
-using vi = vector<int>;
-using vll = vector<long long>;
-
-void solve()
+inline void Zlin()
 {
-    cout << 1;
 }
-
 int main()
 {
     ios::sync_with_stdio(false);
     cin.tie(0);
     cout.tie(0);
-
     int ttt;
     cin >> ttt;
     while (ttt--)
-        solve();
+        Zlin();
 }
