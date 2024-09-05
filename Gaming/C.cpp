@@ -1,79 +1,77 @@
 #include "bits/stdc++.h"
 using namespace std;
-
-using ll = long long;
-using vi = vector<int>;
-using vll = vector<long long>;
-int a[1000005],b[1000005],p[1000005];
-void solve()
+int n,tot;
+int a[5];
+int used[20];
+map<int,int>uu;
+long long ss = 0;
+vector<long long>aa;
+stack<int>ans;
+bool check = 0;
+inline void prework(int dep,int sum)
 {
-    int n;
-    cin >> n;
-    for (int i = 1; i <= n;i++){
-        b[i] = 0;
-        int c;
-        cin >> c;
-        a[c] = i;
-        p[i] = c;
-    }
-    for (int i = 1; i <= n;i++){
-        if(a[i]==i)
-            b[i] = 1;
-    }
-    int s = 0, total = 0;
-    for (int i = 1; i <= n;i++){
-        if(b[i]==1){
-            continue;
-        }
-        else{
-            int q1 = a[i];
-            if(a[q1]==i){
-                s++;
-                b[i] = 1;
-                b[q1] = 1;
-            }
-            else{
-                int q2 = a[q1];
-                if(a[q2]==i){
-                    total++;
-                    b[i] = 1;
-                    b[q1] = 1;
-                    b[q2] = 1;
-                }
-                else{
-                    int q3 = a[q2];
-                    if(a[q3]==i){
-                        total++;
-                        b[i] = 1;
-                        b[q1] = 1;
-                        b[q2] = 1;
-                        b[q3] = 1;
-                    }
-                    else{
-                        total++;
-                        b[i] = 1;
-                        b[q1] = 1;
-                        b[q2] = 1;
-                        a[p[i]] = q3;
-                        //cout << q3;
-                    }
-                }
-            }
-        }
-    }
-    if(s)
-        total += (s+1) / 2 ;
-    cout << total << "\n";
+	if(dep>n)
+	{
+		aa.push_back(sum);
+		return;
+	}
+	for(int i=1;i<=n;i++)
+		if(!used[i])
+		{
+			++used[i];
+			prework(dep+1,sum*10+a[i]);
+			--used[i];
+		}
 }
-
+inline void dfs(int dep,long long sum)
+{
+	if(sum == ss/2){
+		check = 1;
+		while(!ans.empty())
+		{
+			cout<<ans.top()<<'\n';
+			ans.pop();
+		}
+	}
+	if(dep>tot||check) return;
+	for(auto ii=aa.begin();ii!=aa.end();ii++)
+	{
+		int it = *ii;
+		if(!uu[it])
+		{
+			uu[it]=1;
+			if(!check)
+			ans.push(it);
+			dfs(dep+1,sum+it*it);
+			if(check) break;
+			ans.pop();
+			uu[it]=0;
+		}
+	}
+}
+inline void Zlin()
+{
+	cin>>n;
+	for(int i=1;i<=n;i++) cin>>a[i];
+	prework(1,0);
+	tot = aa.size() / 2;
+	if(n==3){
+		for(auto it:aa) ss+=it*it;
+		dfs(1,0);
+		return;
+	}
+	sort(aa.begin(),aa.end());
+	for(int i = 0;i<tot/2;i++)
+		ans.push(aa[i]),ans.push(aa[tot*2-1-i]);
+	while(!ans.empty())
+	{
+		cout<<ans.top()<<'\n';
+		ans.pop();
+	}
+}
 int main()
 {
-    ios::sync_with_stdio(false);
-    cin.tie(0);
-    cout.tie(0);
-
-    int ttt;
-    cin >> ttt;
-    while (ttt--)
-        solve();
+	ios::sync_with_stdio(false);
+	cin.tie(0);cout.tie(0);
+	Zlin();	
 }

@@ -3,6 +3,7 @@ using namespace std;
 const int N = 2e5 + 5;
 inline void Zlin()
 {
+    cout << (1 << 4);
 }
 int main()
 {

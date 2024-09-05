@@ -1,76 +1,38 @@
 #include "bits/stdc++.h"
 using namespace std;
-
-using ll = long long;
-using vi = vector<int>;
-using vll = vector<long long>;
-const int N = 1e6 + 10;
-int fa[N], sizen[N];
-inline int find(int u, int a)
-{
-    if (fa[u] == u)
-    {
-        return u;
-    }
-    else
-    {
-        sizen[u] = max(sizen[u], a + 1);
-        sizen[fa[u]] = max(sizen[fa[u]], sizen[u] + 1);
-        fa[u] = find(fa[u], a);
-    }
-}
-inline void merge(int x, int y)
-{
-    int fx = find(x, 0), fy = find(y, 0);
-    if (fx == fy)
-        return;
-    else
-    {
-        fa[fy] = fx;
-        if (fx == x)
-            sizen[fx] = max(sizen[fx], sizen[fy] + 1);
-        else
-        {
-            int a = sizen[fy];
-            fa[x] = find(x, a);
-        }
-    }
-}
-void init()
-{
-    for (int i = 1; i < N; i++)
-        fa[i] = i;
-}
-void del()
-{
-    for (int i = 1; i < N; i++)
-        sizen[i] = 0;
-}
-void solve()
-{
-    init();
-    del();
-    int n;
-    cin >> n;
-    for (int i = 1; i <= n - 1; i++)
-    {
-        int x, y, z;
-        cin >> x >> y >> z;
-        merge(x, y);
-        cout << sizen[z] << " ";
-        cout << fa[8] << endl;
-    }
-    cout << endl;
-}
-
+string c;
+int ans1,ans2,ans3;
 int main()
 {
-    ios::sync_with_stdio(false);
-    cin.tie(0);
-    cout.tie(0);
-
-    int ttt;
-    cin >> ttt;
-    while (ttt--)
-        solve();
+	ios::sync_with_stdio(false);
+	cin.tie(0);cout.tie(0);
+	while(cin>>c)
+	{
+		int c1=0,c2=0,c3=0;
+		int l = -1;
+		int len = c.length();
+		for(int i=0;i<len;i++)
+		{
+			if(c[i]<='9'&&c[i]>='0') ++c1;
+			else if(c[i]<='z'&&c[i]>='a') ++c2;
+			else if(c[i]<='Z'&&c[i]>='A') ++c3;
+			else
+			{
+				if(!c1&&!c2&&!c3)
+				{
+					l = i;
+					continue;
+				}
+				if(c1&&c2&&c3) ans1+=5;
+				else if((c1&&c2)||(c1&&c3)) ans1+=3;
+				else if(c2&&c3) ans1+=1;
+				ans2+=i-l;
+				l = i;
+				++ans3;
+				c1=c2=c3=0;
+			}
+		}
+	}
+	cout<<ans1<<'\n'<<ans2<<' '<<ans3;
+	return 0;
 }
