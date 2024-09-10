@@ -9,7 +9,7 @@ char c[5] = {'d', 'a', 's', 'w'};
 
 string a[10];
 int used[n + 1][m + 1];
-vector <stack<int>> ans;
+vector<stack<int>> ans;
 stack<int> now;
 
 inline void dfs(int x, int y) {

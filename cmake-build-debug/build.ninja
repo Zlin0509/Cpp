@@ -40,72 +40,6 @@ include CMakeFiles/rules.ninja
 # Logical path to working directory; prefix for absolute paths.
 
 cmake_ninja_workdir = C$:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/
-# =============================================================================
-# Object build statements for EXECUTABLE target Cpp
-
-
-#############################################
-# Order-only phony target for Cpp
-
-build cmake_object_order_depends_target_Cpp: phony || CMakeFiles/Cpp.dir
-
-build CMakeFiles/Cpp.dir/main.cpp.obj: CXX_COMPILER__Cpp_unscanned_Debug C$:/Users/27682/Desktop/Work/Cpp/main.cpp || cmake_object_order_depends_target_Cpp
-  DEP_FILE = CMakeFiles\Cpp.dir\main.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\Cpp.dir
-  OBJECT_FILE_DIR = CMakeFiles\Cpp.dir
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target Cpp
-
-
-#############################################
-# Link the executable Cpp.exe
-
-build Cpp.exe: CXX_EXECUTABLE_LINKER__Cpp_Debug CMakeFiles/Cpp.dir/main.cpp.obj
-  FLAGS = -g
-  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\Cpp.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_FILE = Cpp.exe
-  TARGET_IMPLIB = libCpp.dll.a
-  TARGET_PDB = Cpp.exe.dbg
-
-# =============================================================================
-# Object build statements for EXECUTABLE target E
-
-
-#############################################
-# Order-only phony target for E
-
-build cmake_object_order_depends_target_E: phony || CMakeFiles/E.dir
-
-build CMakeFiles/E.dir/Gaming/E.cpp.obj: CXX_COMPILER__E_unscanned_Debug C$:/Users/27682/Desktop/Work/Cpp/Gaming/E.cpp || cmake_object_order_depends_target_E
-  DEP_FILE = CMakeFiles\E.dir\Gaming\E.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\E.dir
-  OBJECT_FILE_DIR = CMakeFiles\E.dir\Gaming
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target E
-
-
-#############################################
-# Link the executable E.exe
-
-build E.exe: CXX_EXECUTABLE_LINKER__E_Debug CMakeFiles/E.dir/Gaming/E.cpp.obj
-  FLAGS = -g
-  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\E.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_FILE = E.exe
-  TARGET_IMPLIB = libE.dll.a
-  TARGET_PDB = E.exe.dbg
-
 
 #############################################
 # Utility command for edit_cache
@@ -132,10 +66,6 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build Cpp: phony Cpp.exe
-
-build E: phony E.exe
-
 # =============================================================================
 # Folder targets.
 
@@ -144,7 +74,7 @@ build E: phony E.exe
 #############################################
 # Folder: C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug
 
-build all: phony Cpp.exe E.exe
+build all: phony
 
 # =============================================================================
 # Built-in targets

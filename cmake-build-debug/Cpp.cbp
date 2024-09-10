@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Cpp"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.5/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.5/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.5/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.5/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="think">
+				<Option output="C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/think.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.5/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 think"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.5/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.5/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.5/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="think/fast">
+				<Option output="C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/think.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.5/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 think/fast"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.5/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.5/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.5/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="R59A">
+				<Option output="C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/R59A.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.5/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 R59A"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.5/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.5/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.5/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="R59A/fast">
+				<Option output="C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/R59A.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.5/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 R59A/fast"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.5/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.5/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.5/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="R59B">
+				<Option output="C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/R59B.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.5/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 R59B"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.5/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.5/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.5/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="R59B/fast">
+				<Option output="C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/R59B.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2024.1.5/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.5/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 R59B/fast"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.5/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.5/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.5/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.5/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.5/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.5/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.5/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.5/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.5/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.5/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.5/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/27682/Desktop/Work/Cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/27682/Desktop/Work/Cpp/Nowcode/R59A.cpp">
+			<Option target="think"/>
+			<Option target="R59A"/>
+		</Unit>
+		<Unit filename="C:/Users/27682/Desktop/Work/Cpp/Nowcode/R59B.cpp">
+			<Option target="R59A"/>
+			<Option target="R59B"/>
+		</Unit>
+		<Unit filename="C:/Users/27682/Desktop/Work/Cpp/schoolwork/9,4/think.cpp">
+			<Option target="think"/>
+		</Unit>
+		<Unit filename="C:/Users/27682/Desktop/Work/Cpp/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

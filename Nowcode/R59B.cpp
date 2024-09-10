@@ -12,8 +12,16 @@ typedef vector<long long> vll;
 typedef pair<int, int> pii;
 typedef pair<long long, long long> pll;
 
-inline void Zlin() {
+string a = "www.nowcoder.com", b = "ac.nowcoder.com";
 
+inline void Zlin() {
+    string x;
+    cin >> x;
+
+    for (int i = 0; i < x.length(); i++) {
+        strncmp(x + i, a, 16);
+    }
+    cout << "No" << '\n';
 }
 
 int main() {

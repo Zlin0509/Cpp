@@ -3,12 +3,17 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
-  <component name="CMakePresetLoader"><![CDATA[{
-  "useNewFormat": true
-}]]></component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
+  <component name="CMakeReloadState">
+    <option name="reloaded" value="true" />
+  </component>
   <component name="CMakeRunConfigurationManager">
     <generated>
-      <config projectName="Cpp" targetName="Cpp" />
+      <config projectName="Cpp" targetName="think" />
+      <config projectName="Cpp" targetName="R59A" />
+      <config projectName="Cpp" targetName="R59B" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -17,13 +22,58 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0764a090-a013-43ac-bd3e-d2646e18dc84" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Cpp.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" />
+    <list default="true" id="0764a090-a013-43ac-bd3e-d2646e18dc84" name="更改" comment="00">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Nowcode/R59A.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Nowcode/R59B.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gaming/A.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Gaming/A.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gaming/AA" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gaming/AA.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gaming/AA.dSYM/Contents/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gaming/AA.dSYM/Contents/Resources/DWARF/AA" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gaming/AA.dSYM/Contents/Resources/Relocations/aarch64/AA.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gaming/B.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Gaming/B.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gaming/BB.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gaming/C" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gaming/C.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Gaming/C.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gaming/C.dSYM/Contents/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gaming/C.dSYM/Contents/Resources/DWARF/C" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gaming/C.dSYM/Contents/Resources/Relocations/aarch64/C.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gaming/CC.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gaming/D" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gaming/D.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Gaming/D.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gaming/D.dSYM/Contents/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gaming/D.dSYM/Contents/Resources/DWARF/D" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gaming/D.dSYM/Contents/Resources/Relocations/aarch64/D.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gaming/E.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Gaming/E.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gaming/F.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gaming/G.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gaming/H.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gaming/HH.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gaming/I.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gaming/J.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gaming/L.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gaming/Sample.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cache-v2-8d5b24cfa35ff42d06f5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-4715747695edb498f6c5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-db68b384e588f60416f2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2024-09-05T14-31-37-0146.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-Cpp-Debug-9fd677f28b5fb2f8add4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-E-Debug-e521b2515868f5ee0200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.28.6/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.28.6/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.28.6/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.28.6/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schoolwork/9,4/思维题.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/schoolwork/9,4/think.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,46 +84,75 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Zlin0509"
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Zlin0509&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "git@github.com:Zlin0509/Cpp.git",
-    "accountId": "57206e25-dbee-47b1-b992-a646b2853ff2"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:Zlin0509/Cpp.git&quot;,
+    &quot;accountId&quot;: &quot;57206e25-dbee-47b1-b992-a646b2853ff2&quot;
   }
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2lhS2lT1Q0NXjhhPf253Tm9pmZP" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "CMake 应用程序.R59B.executor": "Run",
+    "CMake 应用程序.think.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/27682/Desktop/Work/Clion",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "configurable.group.appearance",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Cpp" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Cpp" TARGET_NAME="Cpp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Cpp" RUN_TARGET_NAME="Cpp">
+  <component name="RunManager" selected="CMake 应用程序.R59B">
+    <configuration name="R59A" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Cpp" TARGET_NAME="R59A" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Cpp" RUN_TARGET_NAME="R59A">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="R59B" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Cpp" TARGET_NAME="R59B" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Cpp" RUN_TARGET_NAME="R59B">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="think" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Cpp" TARGET_NAME="think" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Cpp" RUN_TARGET_NAME="think">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake 应用程序.R59A" />
+      <item itemvalue="CMake 应用程序.R59B" />
+      <item itemvalue="CMake 应用程序.think" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -83,11 +162,35 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1725546661538</updated>
-      <workItem from="1725546662585" duration="35000" />
+      <workItem from="1725546662585" duration="75000" />
+      <workItem from="1725630612769" duration="3607000" />
+      <workItem from="1725767631815" duration="6000" />
+      <workItem from="1725793919453" duration="857000" />
+      <workItem from="1725803679870" duration="20000" />
+      <workItem from="1725806228818" duration="7000" />
+      <workItem from="1725854535071" duration="75000" />
     </task>
+    <task id="LOCAL-00001" summary="00">
+      <option name="closed" value="true" />
+      <created>1725546724898</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1725546724898</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VCPKGProject">
+    <isAutomaticCheckingOnLaunch value="false" />
+    <isAutomaticFoundErrors value="true" />
+    <isAutomaticReloadCMake value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="00" />
+    <option name="LAST_COMMIT_MESSAGE" value="00" />
   </component>
 </project>

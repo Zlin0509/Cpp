@@ -13,13 +13,13 @@ typedef pair<int, int> pii;
 typedef pair<long long, long long> pll;
 
 inline void Zlin() {
-
+    int n, m;
+    cin >> n >> m;
+    printf("%.12lf", n / m);
 }
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr), cout.tie(nullptr);
-    int ttt;
-    cin >> ttt;
-    while (ttt--) Zlin();
+    Zlin();
 }
